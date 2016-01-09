@@ -1,0 +1,13 @@
+h2 Order a cup of coffee
+= form_for CoffeeCup.new, remote: true do |f|
+  = f.select :kind, CoffeeCup::KINDS_OF_COFFEE
+  = f.submit t('labels.coffee_cups.make_coffee')
+
+
+div(ng-controller="CoffeeCupsTableCtrl as cupsCtrl" ng-show="cupsCtrl.visible()")
+  h2 Your recent orders listed below
+  table
+    tr(ng-repeat="cup in cupsCtrl.cups")
+      td ng-bind="cup.kind"
+      td ng-bind="cup.status"
+
