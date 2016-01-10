@@ -7,7 +7,7 @@ h2 Order a cup of coffee
 div(ng-controller="CoffeeCupsTableCtrl as cupsCtrl" ng-show="cupsCtrl.visible()")
   h2 Your recent orders listed below
   table
-    tr(ng-repeat="cup in cupsCtrl.cups | orderBy:'-created_at'")
+    tr(ng-repeat="cup in cupsCtrl.sortedCups() track by cup.id")
       td ng-bind="cup.kind"
       td ng-bind="cup.status"
 

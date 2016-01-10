@@ -38,9 +38,11 @@ gem 'responders'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
+  gem 'rails-assets-lodash'
 end
 
 gem 'slim-rails'
+gem 'sucker_punch'
 
 group :development, :test do
   gem 'pry'

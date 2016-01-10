@@ -8,7 +8,8 @@ class CoffeeCupsController < ApplicationController
   end
 
   def create
-    CoffeeCup.create! coffee_cup_params.merge(user_id: current_user_id)
+    cup = CoffeeCup.create! coffee_cup_params.merge(user_id: current_user_id)
+    MakeCoffeeJob.new(cup.id).enqueue
     render json: {message: I18n.t('messages.coffee_cups.scheduled')}, status: 201
   end
 
