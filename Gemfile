@@ -36,6 +36,10 @@ gem 'thin'
 gem 'thin_async'
 gem 'responders'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular'
+end
+
 gem 'slim-rails'
 
 group :development, :test do

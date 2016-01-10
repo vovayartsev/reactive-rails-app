@@ -15,7 +15,7 @@ class CoffeeCupsController < ApplicationController
   private
 
   def cups
-    CoffeeCup.where(user_id: current_user_id).order_by(created_at: :desc)
+    CoffeeCup.where(user_id: current_user_id)
   end
 
   def coffee_cup_params
