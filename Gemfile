@@ -29,6 +29,9 @@ gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'autoprefixer-rails'
+gem 'ngannotate-rails'
+
 gem 'nobrainer'
 gem 'thin'
 gem 'thin_async'

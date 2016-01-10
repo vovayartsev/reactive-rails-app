@@ -38,6 +38,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    autoprefixer-rails (6.2.3)
+      execjs
+      json
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -83,6 +86,9 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    ngannotate-rails (1.0.3)
+      execjs
+      rails (>= 3.1)
     nobrainer (0.30.0)
       activemodel (>= 4.1.0)
       activesupport (>= 4.1.0)
@@ -184,7 +190,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   jquery-rails
+  ngannotate-rails
   nobrainer
   pry
   rails (= 4.2.5)
