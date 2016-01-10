@@ -1,3 +1,5 @@
+ENV['RETHINKDB_HOST'] ||= ENV['DOCKHERO_HOST']
+
 NoBrainer.configure do |config|
   # app_name is the name of your application in lowercase.
   # When using Rails, the application name is automatically inferred.
