@@ -11,7 +11,7 @@ class MakeCoffeeJob < ActiveJob::Base
     coffee_cup.update(status: 'combining_together')
     sleep(1)
 
-    if coffee_cup.kind == 'cappucino'
+    if coffee_cup.kind == 'cappuccino'
       coffee_cup.update(status: 'adding_milk')
       sleep(1)
     end
