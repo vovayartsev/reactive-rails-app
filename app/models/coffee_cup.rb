@@ -1,6 +1,6 @@
 class CoffeeCup
   KINDS_OF_COFFEE = %w(latte espresso cappuccino)
-  STATUSES = %w(pending ready)
+  STATUSES = %w(pending boiling_water grinding_beans combining_together adding_milk ready)
 
   include NoBrainer::Document
   include NoBrainer::Document::Timestamps
