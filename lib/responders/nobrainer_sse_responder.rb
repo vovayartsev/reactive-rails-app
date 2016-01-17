@@ -26,15 +26,13 @@ module Responders::NobrainerSseResponder
   PING_INTERVAL = 25 # so that Heroku don't close the socket
 
   def to_sse
-    rql = resource.to_rql.changes(include_initial: true)
-
     response = Thin::AsyncResponse.new(request.env, 200, 'Content-Type' => 'text/event-stream')
     response.send_headers
 
     output_stream = ActionController::Live::SSE.new(response, retry: 300, event: 'row')
     db_handler = DbHandler.new(output_stream)
 
-    rethink_handle = rql.em_run(NoBrainer.connection.raw, db_handler)
+    rethink_handle = rethink_query.em_run(NoBrainer.connection.raw, db_handler)
 
     pinger = EventMachine::PeriodicTimer.new(PING_INTERVAL) do
       output_stream.write('PING', event: 'ping')
@@ -48,4 +46,11 @@ module Responders::NobrainerSseResponder
     # sending immediate response with just headers
     head -1
   end
+
+  private
+
+  def rethink_query
+    resource.to_rql.changes(include_initial: true)
+  end
+
 end
