@@ -43,8 +43,7 @@ module Responders::NobrainerSseResponder
       rethink_handle.close
     end
 
-    # sending immediate response with just headers
-    head -1
+    head -1  # aka throw :async
   end
 
   private

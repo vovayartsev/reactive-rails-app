@@ -30,17 +30,19 @@ gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'autoprefixer-rails'
-gem 'ngannotate-rails'
 
 gem 'nobrainer'
 gem 'thin'
 gem 'thin_async'
 gem 'responders'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-angular'
-  gem 'rails-assets-lodash'
-end
+gem 'sprockets'
+gem 'sprockets-es6'
+
+
+gem 'react-rails'
+gem 'rxjs-rails'
+gem 'lodash-rails'
 
 gem 'slim-rails'
 gem 'sucker_punch'

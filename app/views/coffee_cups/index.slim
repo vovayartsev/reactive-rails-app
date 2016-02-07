@@ -4,7 +4,11 @@ h2 Order a cup of coffee
   = f.submit t('labels.coffee_cups.make_coffee')
 
 
-div(ng-controller="CoffeeCupsTableCtrl as cupsCtrl" ng-show="cupsCtrl.visible()")
+h2 React Test below
+
+= react_component('CupsList', url: coffee_cups_path(format: :sse))
+
+div
   h2 Your recent orders listed below
   table
     tr(ng-repeat="cup in cupsCtrl.sortedCups() track by cup.id")

@@ -13,8 +13,12 @@
 //= require lodash
 //= require jquery
 //= require jquery_ujs
-//= require angular
+//= require rx.all.js
+//= require react
+//= require react_ujs
+//= require components
+//= require aggregated_event_source
 //= require_self
-//= require_tree .
 
-angular.module('coffee', []);
+
+
