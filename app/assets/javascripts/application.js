@@ -13,7 +13,6 @@
 //= require lodash
 //= require jquery
 //= require jquery_ujs
-//= require rx.all.js
 //= require react
 //= require react_ujs
 //= require components

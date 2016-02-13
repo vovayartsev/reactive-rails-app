@@ -41,7 +41,7 @@ gem 'sprockets-es6'
 
 
 gem 'react-rails'
-gem 'rxjs-rails'
+gem 'sprockets-es6'
 gem 'lodash-rails'
 
 gem 'slim-rails'

@@ -144,8 +144,6 @@ GEM
       railties (>= 4.2.0, < 5)
     rethinkdb (2.2.0.1)
       json
-    rxjs-rails (3.1.0)
-      railties (>= 3.0, < 5.0)
     sass (3.4.20)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -213,7 +211,6 @@ DEPENDENCIES
   rails (= 4.2.5)
   react-rails
   responders
-  rxjs-rails
   sass-rails (~> 5.0)
   slim-rails
   spring
