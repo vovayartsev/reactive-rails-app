@@ -18,7 +18,11 @@
 //= require react_ujs
 //= require components
 //= require aggregated_event_source
+//= require semantic-ui/dropdown
+//= require semantic-ui/transition
 //= require_self
 
 
-
+$(function(){
+  $('.ui.dropdown').dropdown();
+});

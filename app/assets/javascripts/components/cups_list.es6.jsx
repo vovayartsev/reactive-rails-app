@@ -17,11 +17,24 @@ class CupsList extends React.Component {
   render() {
     var {cups} = this.state;
     return (
-      <ul>
+      <div className="ui cards">
         {cups.map((cup) => {
-          return (<li key={cup.id}> {cup.kind} - {cup.status} </li>);
+          return (
+            <div className="card" key={cup.id}>
+              <div className="content">
+                <i className="right floated coffee icon"></i>
+                <div className="header"> {cup.kind} </div>
+                <div className="meta">
+                  <div className="ui tiny progress">
+                    <div className="bar" style={{width: cup.percent + '%'}}></div>
+                  </div>
+                </div>
+                <div className="description"> {cup.status} </div>
+              </div>
+            </div>
+          );
         })}
-      </ul>
+      </div>
     );
   }
 }

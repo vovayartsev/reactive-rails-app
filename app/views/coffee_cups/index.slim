@@ -1,7 +1,11 @@
-h2 Order a cup of coffee
-= form_for CoffeeCup.new, remote: true do |f|
-  = f.select :kind, CoffeeCup::KINDS_OF_COFFEE
-  = f.submit t('labels.coffee_cups.make_coffee')
+.ui.padded.inverted.segment
+  = form_for CoffeeCup.new, remote: true, html: {class: 'ui inverted form'} do |f|
+    .field
+      = f.label :kind, t('labels.coffee_cups.kind_selection')
+      = f.select :kind, CoffeeCup::KINDS_OF_COFFEE, {}, class: 'ui selection dropdown'
+
+    .field
+      = f.submit t('labels.coffee_cups.make_coffee'), class: 'ui primary button'
 
 div
   h2 Your recent orders listed below

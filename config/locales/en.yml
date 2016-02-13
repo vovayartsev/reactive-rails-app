@@ -6,3 +6,4 @@ en:
   labels:
     coffee_cups:
       make_coffee: "Make Coffee"
+      kind_selection: "What kind of coffee do you like today?"

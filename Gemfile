@@ -44,6 +44,8 @@ gem 'react-rails'
 gem 'rxjs-rails'
 gem 'sprockets-es6'
 gem 'lodash-rails'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+
 
 gem 'slim-rails'
 gem 'sucker_punch'
