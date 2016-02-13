@@ -1,12 +1,19 @@
-class AggregatedEventSource {
-  constructor() {
-    this.stream = {};
-  }
+class AggregatedEventSource extends Rx.Subject {
+  constructor(url) {
+    super();
 
-  subscribe(callback) {
-    setTimeout(function () {
-      callback({name: 'Vova'});
-    }, 3000);
+    this.source = new EventSource(url);
+    this.state = {};
+
+    this.source.addEventListener('row', (event) => {
+      let data = JSON.parse(event.data);
+      if (data.new_val) { // added or updated
+        this.state[data.new_val.id] = data.new_val;
+      } else { // deleted
+        delete this.state[data.old_val.id];
+      }
+
+      this.onNext(_.values(this.state));
+    });
   }
 }
-

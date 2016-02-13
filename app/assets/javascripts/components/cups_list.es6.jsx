@@ -1,17 +1,27 @@
 class CupsList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {name: 'loading...'};
-  }
+    this.state = {cups: []};
 
-  componentDidMount() {
-    this.aggregator = new AggregatedEventSource(this.props.url);
-    this.aggregator.subscribe(this.setState.bind(this));
+    let aggregator = new AggregatedEventSource(this.props.url);
+    aggregator.subscribe((cups) => {
+      this.setState({cups: _.sortBy(cups, dateSorter)});
+    });
+
+    // helper method
+    function dateSorter(cup) {
+      return -new Date(cup.created_at);
+    }
   }
 
   render() {
+    var {cups} = this.state;
     return (
-      <div>Hello {this.state.name}</div>
+      <ul>
+        {cups.map((cup) => {
+          return (<li key={cup.id}> {cup.kind} - {cup.status} </li>);
+        })}
+      </ul>
     );
   }
 }
