@@ -19,20 +19,7 @@ class CupsList extends React.Component {
     return (
       <div className="ui cards">
         {cups.map((cup) => {
-          return (
-            <div className="card" key={cup.id}>
-              <div className="content">
-                <i className="right floated coffee icon"></i>
-                <div className="header"> {cup.kind} </div>
-                <div className="meta">
-                  <div className="ui tiny progress">
-                    <div className="bar" style={{width: cup.percent + '%'}}></div>
-                  </div>
-                </div>
-                <div className="description"> {cup.status} </div>
-              </div>
-            </div>
-          );
+          return (<CoffeeCup cup={cup} key={cup.id}/>);
         })}
       </div>
     );
