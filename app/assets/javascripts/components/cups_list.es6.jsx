@@ -16,7 +16,7 @@ class CupsList extends React.Component {
 
   render() {
     var {cups} = this.state;
-    return <div>
+    return <div className="ui cards">
              {cups.map((cup) => {
                return (<CoffeeCup cup={cup} key={cup.id}/>);
              })}
