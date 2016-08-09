@@ -16,12 +16,10 @@ class CupsList extends React.Component {
 
   render() {
     var {cups} = this.state;
-    return (
-      <div className="ui cards">
-        {cups.map((cup) => {
-          return (<CoffeeCup cup={cup} key={cup.id}/>);
-        })}
-      </div>
-    );
+    return <div>
+             {cups.map((cup) => {
+               return (<CoffeeCup cup={cup} key={cup.id}/>);
+             })}
+          </div>;
   }
 }
