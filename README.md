@@ -1,8 +1,10 @@
-== README
+README
+========
 
 Source code for https://reactive-coffee.herokuapp.com
 
-=== Deployment 
+Deployment 
+-----------
 
 When deploying to Heroku, you can get RethinkDB via Dockhero addon:
 
