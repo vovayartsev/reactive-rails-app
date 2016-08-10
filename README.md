@@ -2,6 +2,7 @@ README
 ========
 
 Source code for https://reactive-coffee.herokuapp.com
+Find more in http://blog.castle.co/tech/05-27-2016/reactive-web
 
 Deployment 
 -----------
